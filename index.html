@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PetNest — Trusted Pet Home Stays</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="navbar.css">
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-brand">🐾 PetNest</a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#search" class="nav-link">Find Hosts</a></li>
+          <li><a href="#" class="nav-link">How It Works</a></li>
+          <li><a href="#" class="nav-link">Become a Host</a></li>
+          <li id="authNavSection"></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Content Container -->
+  <main class="container">
+    
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="hero-content">
+        <span class="hero-badge">🐾 Trusted Pet Home Stays</span>
+        <h1>A second home <span>for your best friend.</span></h1>
+        <p>Find trusted local families who care for your pets in a comfortable home environment.</p>
+        <div class="hero-buttons">
+          <a href="#search" class="btn btn-primary">Find a Pet Host</a>
+          <a href="#" class="btn btn-secondary">Become a Host</a>
+        </div>
+      </div>
+      <div class="hero-image">
+        <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=800&q=80" alt="Dog enjoying a home stay">
+      </div>
+    </section>
+
+    <!-- Interactive Search Bar Component -->
+    <section id="search" class="search-box">
+      <form id="mainSearchForm" class="search-form">
+        <div class="form-group">
+          <label for="searchLocation">Location</label>
+          <input type="text" id="searchLocation" placeholder="e.g. Kolkata">
+        </div>
+        <div class="form-group">
+          <label for="searchCheckIn">Check-in</label>
+          <input type="date" id="searchCheckIn">
+        </div>
+        <div class="form-group">
+          <label for="searchPetType">Pet Type</label>
+          <select id="searchPetType">
+            <option value="">All Pets</option>
+            <option value="Dogs">Dog</option>
+            <option value="Cats">Cat</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="searchMaxPrice">Max Budget (₹/night)</label>
+          <input type="number" id="searchMaxPrice" placeholder="e.g. 1000">
+        </div>
+        <button type="submit" class="btn btn-primary">🔍 Search</button>
+      </form>
+    </section>
+
+    <!-- Dynamic Search Results Section -->
+    <section class="search-results-section">
+      <h2 class="section-title">Available Pet Hosts</h2>
+      <div id="hostResultsGrid" class="grid grid-cols-4">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Application Logic Injection -->
+  <script src="data.js"></script>
+  <script src="search.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
